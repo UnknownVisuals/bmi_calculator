@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
 
+const bottomContainerHeight = 80.0;
+const appBarBackgroundColor = Color(0xFF222831);
+const activeCardColor = Color(0xFF30475E);
+const bottomContainerColor = Color(0xFFF05454);
+
 class InputPage extends StatefulWidget {
   const InputPage({super.key});
 
@@ -12,47 +17,53 @@ class _InputPageState extends State<InputPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color(0xFF222831),
+        backgroundColor: appBarBackgroundColor,
         title: const Text('REY BMI Calculator'),
       ),
-      body: const Column(
+      body: Column(
         children: <Widget>[
-          Expanded(
+          const Expanded(
             child: Row(
               children: <Widget>[
                 Expanded(
                   child: ReusableCard(
-                    colour: Color(0xFF30475E),
+                    colour: activeCardColor,
                   ),
                 ),
                 Expanded(
                   child: ReusableCard(
-                    colour: Color(0xFF30475E),
+                    colour:  activeCardColor,
                   ),
                 ),
               ],
             ),
           ),
-          Expanded(
+          const Expanded(
             child: ReusableCard(
-              colour: Color(0xFF30475E),
+              colour:  activeCardColor,
             ),
           ),
-          Expanded(
+          const Expanded(
             child: Row(
               children: <Widget>[
                 Expanded(
                   child: ReusableCard(
-                    colour: Color(0xFF30475E),
+                    colour:  activeCardColor,
                   ),
                 ),
                 Expanded(
                   child: ReusableCard(
-                    colour: Color(0xFF30475E),
+                    colour:  activeCardColor,
                   ),
                 ),
               ],
             ),
+          ),
+          Container(
+              color: bottomContainerColor,
+              margin: const EdgeInsets.only(top: 10.0),
+              width: double.infinity,
+              height: bottomContainerHeight,
           ),
         ],
       ),
