@@ -1,6 +1,12 @@
 # bmi_calculator
 
-A new Flutter project.
+Flutter project for Mobile Application Class Assignment.
+
+```
+Name    : Reynaldhi Tryana Graha
+NIM     : 1101213117
+Class   : TT-44-GAB1
+```
 
 ## Getting Started
 
