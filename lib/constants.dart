@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
 
-const bottomContainerHeight = 80.0;
-const appBarBackgroundColor = Color(0xFF222831);
-const activeCardColor = Color(0xFF30475E);
-const inactiveCardColor = Color.fromARGB(255, 28, 41, 54);
-const bottomContainerColor = Color(0xFFF05454);
+const kBottomContainerHeight = 80.0;
+const kAppBarBackgroundColor = Color(0xFF222831);
+const kActiveCardColor = Color(0xFF30475E);
+const kInactiveCardColor = Color.fromARGB(255, 28, 41, 54);
+const kBottomContainerColor = Color(0xFFF05454);
 
-const labelTextStyle = TextStyle(
-  fontSize: 18.0,
+const kLabelTextStyle = TextStyle(
+  fontSize: 20.0,
   color: Color(0xFFDDDDDD),
+);
+
+const kNumberTextStyle = TextStyle(
+  fontSize: 50.0,
+  fontWeight: FontWeight.w900,
 );
