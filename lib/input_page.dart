@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:bmi_calculator/reusable_card.dart';
+import 'package:bmi_calculator/icon_content.dart';
 
 const bottomContainerHeight = 80.0;
 const appBarBackgroundColor = Color(0xFF222831);
@@ -28,11 +31,19 @@ class _InputPageState extends State<InputPage> {
                 Expanded(
                   child: ReusableCard(
                     colour: activeCardColor,
+                    cardChild: IconContent(
+                      icon: FontAwesomeIcons.mars,
+                      label: "MALE",
+                    ),
                   ),
                 ),
                 Expanded(
                   child: ReusableCard(
-                    colour:  activeCardColor,
+                    colour: activeCardColor,
+                    cardChild: IconContent(
+                      icon: FontAwesomeIcons.venus,
+                      label: "FEMALE",
+                    ),
                   ),
                 ),
               ],
@@ -40,7 +51,8 @@ class _InputPageState extends State<InputPage> {
           ),
           const Expanded(
             child: ReusableCard(
-              colour:  activeCardColor,
+              colour: activeCardColor,
+              cardChild: IconContent(icon: FontAwesomeIcons.a, label: "...."),
             ),
           ),
           const Expanded(
@@ -48,41 +60,28 @@ class _InputPageState extends State<InputPage> {
               children: <Widget>[
                 Expanded(
                   child: ReusableCard(
-                    colour:  activeCardColor,
+                    colour: activeCardColor,
+                    cardChild:
+                        IconContent(icon: FontAwesomeIcons.a, label: "...."),
                   ),
                 ),
                 Expanded(
                   child: ReusableCard(
-                    colour:  activeCardColor,
+                    colour: activeCardColor,
+                    cardChild:
+                        IconContent(icon: FontAwesomeIcons.a, label: "...."),
                   ),
                 ),
               ],
             ),
           ),
           Container(
-              color: bottomContainerColor,
-              margin: const EdgeInsets.only(top: 10.0),
-              width: double.infinity,
-              height: bottomContainerHeight,
+            color: bottomContainerColor,
+            margin: const EdgeInsets.only(top: 10.0),
+            width: double.infinity,
+            height: bottomContainerHeight,
           ),
         ],
-      ),
-    );
-  }
-}
-
-class ReusableCard extends StatelessWidget {
-  const ReusableCard({super.key, required this.colour});
-
-  final Color colour;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.all(15.0),
-      decoration: BoxDecoration(
-        color: colour,
-        borderRadius: BorderRadius.circular(10.0),
       ),
     );
   }
