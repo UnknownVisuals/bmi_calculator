@@ -6,8 +6,13 @@ import 'package:bmi_calculator/icon_content.dart';
 const bottomContainerHeight = 80.0;
 const appBarBackgroundColor = Color(0xFF222831);
 const activeCardColor = Color(0xFF30475E);
+const inactiveCardColor = Color.fromARGB(255, 28, 41, 54);
 const bottomContainerColor = Color(0xFFF05454);
 
+enum Gender {
+  male,
+  female,
+}
 class InputPage extends StatefulWidget {
   const InputPage({super.key});
 
@@ -16,6 +21,9 @@ class InputPage extends StatefulWidget {
 }
 
 class _InputPageState extends State<InputPage> {
+
+  Gender? selectedGender;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,13 +33,18 @@ class _InputPageState extends State<InputPage> {
       ),
       body: Column(
         children: <Widget>[
-          const Expanded(
+          Expanded(
             child: Row(
               children: <Widget>[
                 Expanded(
                   child: ReusableCard(
-                    colour: activeCardColor,
-                    cardChild: IconContent(
+                    onPress: (){
+                      setState(() {
+                        selectedGender = Gender.male;
+                      });
+                    },
+                    colour: selectedGender == Gender.male ? activeCardColor : inactiveCardColor,
+                    cardChild: const IconContent(
                       icon: FontAwesomeIcons.mars,
                       label: "MALE",
                     ),
@@ -39,8 +52,13 @@ class _InputPageState extends State<InputPage> {
                 ),
                 Expanded(
                   child: ReusableCard(
-                    colour: activeCardColor,
-                    cardChild: IconContent(
+                    onPress: (){
+                      setState(() {
+                        selectedGender = Gender.female;
+                      });
+                    },
+                    colour: selectedGender == Gender.female ? activeCardColor : inactiveCardColor,
+                    cardChild: const IconContent(
                       icon: FontAwesomeIcons.venus,
                       label: "FEMALE",
                     ),
@@ -52,7 +70,7 @@ class _InputPageState extends State<InputPage> {
           const Expanded(
             child: ReusableCard(
               colour: activeCardColor,
-              cardChild: IconContent(icon: FontAwesomeIcons.a, label: "...."),
+              cardChild: IconContent(),
             ),
           ),
           const Expanded(
@@ -61,15 +79,13 @@ class _InputPageState extends State<InputPage> {
                 Expanded(
                   child: ReusableCard(
                     colour: activeCardColor,
-                    cardChild:
-                        IconContent(icon: FontAwesomeIcons.a, label: "...."),
+                    cardChild: IconContent(),
                   ),
                 ),
                 Expanded(
                   child: ReusableCard(
                     colour: activeCardColor,
-                    cardChild:
-                        IconContent(icon: FontAwesomeIcons.a, label: "...."),
+                    cardChild: IconContent(),
                   ),
                 ),
               ],

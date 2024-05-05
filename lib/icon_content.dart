@@ -6,9 +6,9 @@ const labelTextStyle = TextStyle(
 );
 
 class IconContent extends StatelessWidget {
-  const IconContent({super.key, required this.icon, required this.label});
+  const IconContent({super.key, this.icon, this.label = ""});
 
-  final IconData icon;
+  final IconData? icon;
   final String label;
 
   @override
