@@ -31,7 +31,7 @@ class _InputPageState extends State<InputPage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: kBackgroundColor,
-        title: const Text('REY BMI Calculator'),
+        title: const Text('Reynaldhi - 1101213117'),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
