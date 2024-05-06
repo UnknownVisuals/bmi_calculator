@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:bmi_calculator/input_page.dart';
+import 'package:bmi_calculator/constants.dart';
+import 'package:bmi_calculator/result_page.dart';
 
 void main() => runApp(const BMICalculator());
 
@@ -10,10 +12,13 @@ class BMICalculator extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData.dark().copyWith(
-        primaryColor: const Color(0xFF222831),
-        scaffoldBackgroundColor: const Color(0xFF222831),
+        scaffoldBackgroundColor: kBackgroundColor,
       ),
-      home: const InputPage(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const InputPage(),
+        '/result': (context) => const ResultPage(),
+      },
     );
   }
 }
